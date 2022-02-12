@@ -15,7 +15,7 @@ section{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, blue, #e724c6, rgb(51, 102, 219), #d136e6, blue, #e724c6, rgb(86, 43, 228));
+    background: linear-gradient(to top right, blue, #670870, rgb(51, 102, 219), #851294, blue, #640654, rgb(86, 43, 228));
     background-attachment: fixed;
     padding: 50px;
 }
@@ -129,9 +129,8 @@ header ul li a.active{
     position: relative;
     display: flex;
     max-width: 400px;
-    margin-top: -50px;
     animation: animate 5s linear infinite;
-    padding: 40px;
+    padding: 30px;
     transition: .5s ease-in-out;
 }
 .imgBx:hover{
@@ -141,10 +140,10 @@ header ul li a.active{
 }
 @keyframes animate{
     0%, 100%{
-        transform: translateY(50px);
+        transform: translateY(40px);
     }
     50%{
-        transform: translateY(100px);
+        transform: translateY(80px);
     }
 }
 .sic{
@@ -171,4 +170,77 @@ header ul li a.active{
 .sic a:hover i{
     transform: scale(0.6) rotate(360deg);
 }
- 
+@media (max-width: 1200px)
+{
+    .container{
+        position: relative;
+        width: calc(100% - 20px);        
+    }
+} 
+@media (max-width: 998px)
+{
+    section{
+        padding: 30px;     
+    }
+    .container{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        padding-top: 50px;
+    }
+    .container .content{
+        transform: translateX(0px);
+        max-width: 100%;
+        padding: 30px;
+        margin-top: -40px; 
+    }
+    header{
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        top: -60px;
+        padding: 20px;
+        left: 0;
+        right: 0;
+    }
+    header ul{
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+    header ul li{
+        margin: 2px;
+    }
+    header ul li a{
+        display: inline-block;
+    }
+    .sic{
+        position: relative;
+        flex-direction: row;
+        left: 0;
+    }
+    .sic i{
+        margin: 0 10px;    
+    }
+    .imgBx{
+        margin-bottom: 10px;
+    }
+    @keyframes animate{
+        0%, 100%{
+            transform: translateY(-20px);
+        }
+        50%{
+            transform: translateY(20px);
+        }
+    }
+} 
+@media (max-width: 600px){
+    .content h2{
+        font-size: 1.5em;
+    }
+    .content p{
+        font-size: 1em;
+    }
+    .imgBx img{
+        max-width: 300px;
+    }
+}
